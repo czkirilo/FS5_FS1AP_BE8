@@ -5,15 +5,14 @@ using System.Threading.Tasks;
 
 namespace Sistema
 {
-    public abstract class Pessoa
+    public class Pessoa
     {
-        public string nome {get; set;}
-
-        public string endereco { get; set; }
-        
+        //Atributos
+        public string? nome { get; set; }
+        public string? Endereco { get; set; }       
         public bool enderecoComercial { get; set; }
         
-
+        //Métodos
         public void PagarImposto(){}
     }
 }

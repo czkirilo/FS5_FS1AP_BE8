@@ -7,9 +7,9 @@ namespace Sistema
 {
     public class PessoaFisica : Pessoa
     {
-        public string CPF { get; set; }
-
+        public string cpf { get; set; }
+        
         public DateTime dataNascimento { get; set; }
-
+    
     }
 }
