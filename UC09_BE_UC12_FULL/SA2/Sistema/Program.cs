@@ -1,15 +1,11 @@
 ﻿
 namespace Sistema
 {
-    class Program{
+    class Program
+    {
         static void Main(string[] args)
         {
-            Endereco end = new Endereco();
-            end.logradouro = "Rua X";
-            end.numero = 100;
-            end.complemento = "Qualquer coisa";
-            end.enderecoComercial = false;
-
+            /*
             PessoaFisica pf = new PessoaFisica();
             pf.endereco = end;
             pf.nome = "Caique Zaneti";
@@ -35,11 +31,35 @@ namespace Sistema
         }else{
             Console.WriteLine("Você ainda assiste felipe neto que eu sei");
         }
+    
+*/
+
+            PessoaJuridica pj = new PessoaJuridica();
+            
+            Endereco end = new Endereco();
+            end.logradouro = "Rua X";
+            end.numero = 100;
+            end.complemento = "Qualquer coisa";
+            end.enderecoComercial = true;
+
+            pj.endereco = end;
+            pj.cnpj = "12345678990001";
+            pj.RazaoSocial = "Pessoa Juridica";
+
+            if(pj.ValidarCNPJ(pj.cnpj)){
+                Console.WriteLine("cnpj valido");
+            }else{
+                Console.WriteLine("cnpj invalido");
+            }
+            
+
+
+
+
 
         }
-
     }
-
 }
 
 
+// auto ident = shift + alt + F
