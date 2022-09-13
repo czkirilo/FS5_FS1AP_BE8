@@ -5,7 +5,7 @@ namespace Sistema
     {
         static void Main(string[] args)
         {
-            PessoaJuridica metodoPj = new PessoaJuridica();
+            
             PessoaJuridica novaPj = new PessoaJuridica();
             Endereco novoEndPj = new Endereco();
 
@@ -167,9 +167,10 @@ namespace Sistema
                         break;
                     case "4":
                         //Cadastrar pessoa juridica
+                        Console.Clear();
                         novaPj.nome = "Nome PJ";
                         novaPj.cnpj = "00.000.000/0001-00";
-                        novaPj.RazaoSocial = "Razaão Social Pj";
+                        novaPj.RazaoSocial = "Razão Social Pj";
 
                         novoEndPj.logradouro = "Alameda Barão de Limeira";
                         novoEndPj.numero = 539;
@@ -178,19 +179,20 @@ namespace Sistema
 
                         novaPj.endereco = novoEndPj;
 
-                        metodoPj.Inserir(novaPj);
+                        novaPj.Inserir(novaPj);
 
 
                         break;
                     case "5":
+                    Console.Clear();
                         // Listar pessoa juridica
-                        List<PessoaJuridica> listapj = metodoPj.Ler();
+                        List<PessoaJuridica> listapj = novaPj.Ler();
                         foreach( PessoaJuridica cadaItem in listapj){
                             Console.Clear();
                             Console.WriteLine(@$"
-                            Nome: {novaPj.nome}
-                            Razão Social: {novaPj.RazaoSocial}
-                            CNPJ: {novaPj.RazaoSocial}
+                            Nome: {cadaItem.nome}
+                            Razão Social: {cadaItem.RazaoSocial}
+                            CNPJ: {cadaItem.RazaoSocial}
                             
                             ");
                         }
